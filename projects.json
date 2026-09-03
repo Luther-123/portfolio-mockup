@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Dunning & Revenue Recovery SaaS",
+        "tag": "FastAPI / Python / Stripe",
+        "description": "Automated payment failure recovery system featuring tokenized secure customer billing portals, retry logic algorithms, and real-time webhook ingestion.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+        "link": "https://github.com/yourusername/dunning-saas"
+    },
+    {
+        "title": "Creative-Tech & 3D Pipeline",
+        "tag": "C++ / Blender / OpenGL",
+        "description": "Custom software workflows integrating low-poly 3D environment simulations, custom memory-managed data structures, and procedural asset rendering.",
+        "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+        "link": "https://github.com/yourusername/3d-pipeline"
+    }
+]
