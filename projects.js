@@ -3,7 +3,11 @@ fetch('projects.json')
   .then(data => {
     const projects = Array.isArray(data) ? data : (data.projects || []);
     const grid = document.getElementById('project-grid');
-    grid.innerHTML = projects.map(p => `
+
+    // Slice only the first 3 projects for the home page
+    const featured = projects.slice(0, 3);
+
+    grid.innerHTML = featured.map(p => `
       <div class="project-card">
         <div class="card-thumb">
           <img src="${p.image}" alt="${p.title}" class="project-img">

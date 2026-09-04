@@ -331,3 +331,22 @@ body {
 .project-card:hover .project-img {
     transform: scale(1.03);
 }
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.archive-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.archive-link:hover {
+    color: #38bdf8;
+}
