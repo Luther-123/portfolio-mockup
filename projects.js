@@ -50,22 +50,19 @@ fetch('projects.json')
         const link = p.link || '#';
 
         return `
-          <tr>
-            <td>${year}</td>
-            <td class="font-semibold">${title}</td>
-            <td>${madeAt}</td>
-            <td>
-              <div class="tag-flex">
-                ${tag.split('/').map(t => `<span class="mini-tag">${t.trim()}</span>`).join('')}
-              </div>
-            </td>
-            <td>
-              <a href="${link}" target="_blank" rel="noopener noreferrer" class="table-link">
-                ${link !== '#' ? link.replace(/^https?:\/\//, '') + ' &nearr;' : 'View'}
-              </a>
-            </td>
-          </tr>
-        `;
+        <div class="project-card">
+          <div class="project-image-wrapper">
+            <img src="${image}" alt="${title}" class="project-img">
+          </div>
+          <div class="project-info">
+            <span class="project-tag">${tag}</span>
+            <h3 class="project-title">
+              <a href="${link}" target="_blank" class="project-link">${title} &nearr;</a>
+            </h3>
+            <p class="project-desc">${description}</p>
+          </div>
+        </div>
+      `;
       }).join('');
     }
   })
