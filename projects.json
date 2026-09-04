@@ -1,13 +1,6 @@
 {
   "featuredProjects": [
     {
-      "title": "Personal-Finance-Tracker",
-      "tag": "FastAPI / Python / Js",
-      "description": "A mockup for a personal finance tracker. it is created to help you manage your finances with a visually simple user interface.",
-      "image": "https://i.imgur.com/UacMJNN.png",
-      "link": "https://luther-123.github.io/personal-finace-tracker/index.html"
-    },
-    {
       "title": "LMS: Learning Management System",
       "tag": "React, Next.js, HTML",
       "description": "This a learning management system that can be used for institutions, to track students performance, display class schedule and operate as a student's database.",
@@ -20,16 +13,16 @@
       "description": "Created an webstore for a shop that needed to go live online. The webstore features full stack features, a login, checkout and personal data settings section that allows you to change you data as one deems fit",
       "image": "https://i.imgur.com/LoEGn7R.png",
       "link": "https://my-marketplace2-n24w-ouqxatfzy-luther-123s-projects.vercel.app/"
+    },
+    {
+      "title": "Personal-Finance-Tracker",
+      "tag": "HTML, Python, Js, CSS",
+      "description": "A mockup for a personal finance tracker. it is created to help you manage your finances with a visually simple user interface.",
+      "image": "https://i.imgur.com/UacMJNN.png",
+      "link": "https://luther-123.github.io/personal-finace-tracker/index.html"
     }
   ],
   "allProjects": [
-    {
-      "year": "2026",
-      "title": "Personal-Finance-tracker",
-      "madeAt": "Independent",
-      "tag": "FastAPI, Python, js",
-      "link": "https://luther-123.github.io/personal-finace-tracker/index.html"
-    },
     {
       "year": "2026",
       "title": "E-commerce Webstore",
@@ -43,6 +36,13 @@
       "madeAt": "Independent",
       "tag": "React, Next.js, HTML",
       "link": "https://learning-management-system-pied-two.vercel.app/"
+    },
+    {
+      "year": "2026",
+      "title": "Personal-Finance-Tracker",
+      "madeAt": "Independent",
+      "tag": "HTML, Python, Js, CSS",
+      "link": "https://luther-123.github.io/personal-finace-tracker/index.html"
     }
   ]
 }
