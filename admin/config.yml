@@ -5,18 +5,28 @@ media_folder: "assets"
 public_folder: "assets"
 collections:
   - name: "portfolio"
-    label: "Portfolio Projects"
+    label: "Portfolio Content"
     files:
       - file: "projects.json"
-        label: "Projects List"
-        name: "projects"
+        label: "Projects Manager"
+        name: "projects_manager"
         fields:
-          - label: "Projects"
-            name: "projects"
+          - label: "Featured Projects (Homepage)"
+            name: "featuredProjects"
             widget: "list"
+            max: 6 # You can set a limit or leave it open
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Tag", name: "tag", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Image URL", name: "image", widget: "string"}
+              - {label: "Project Link", name: "link", widget: "string"}
+          - label: "All Projects (Archive Table)"
+            name: "allProjects"
+            widget: "list"
+            fields:
+              - {label: "Year", name: "year", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Made At", name: "madeAt", widget: "string"}
+              - {label: "Tag / Built With", name: "tag", widget: "string"}
               - {label: "Project Link", name: "link", widget: "string"}
