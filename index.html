@@ -23,14 +23,19 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <span class="badge">Hey, I'm Luther</span>
-            <h1>BUILDING DIGITAL<br><span>SYSTEMS & MEDIA</span></h1>
-            <p>Computer Science undergrad specializing in robust backend architectures, 3D graphics, and dynamic motion
-                design.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn-primary">View Projects &rarr;</a>
-                <a href="#contact" class="btn-secondary">Let's Connect</a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge">Hey, I'm Luther</span>
+                <h1>BUILDING DIGITAL<br><span>SYSTEMS & MEDIA</span></h1>
+                <p>Computer Science undergrad specializing in robust backend architectures, 3D graphics, and dynamic
+                    motion design.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">View Projects &rarr;</a>
+                    <a href="#contact" class="btn-secondary">Let's Connect</a>
+                </div>
+            </div>
+            <div class="hero-canvas-container">
+                <canvas id="hero-3d-canvas"></canvas>
             </div>
         </div>
     </section>
@@ -148,6 +153,66 @@
         </div>
     </section>
     <script src="projects.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const container = document.querySelector('.hero-canvas-container');
+        const canvas = document.getElementById('hero-3d-canvas');
+
+        // Scene, Camera, Renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        // Create a sleek Torus Knot or Octahedron wireframe matching your accent colors
+        const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+        const material = new THREE.MeshBasicMaterial({
+            color: 0xf97316, // Vibrant orange matching your accent
+            wireframe: true,
+            transparent: true,
+            opacity: 0.8
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        camera.position.z = 30;
+
+        // Mouse movement interaction variables
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX - window.innerWidth / 2) * 0.001;
+            mouseY = (event.clientY - window.innerHeight / 2) * 0.001;
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            targetX += (mouseX - targetX) * 0.05;
+            targetY += (mouseY - targetY) * 0.05;
+
+            mesh.rotation.x += 0.005 + targetY;
+            mesh.rotation.y += 0.007 + targetX;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Responsive window resizing
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+    </script>
+
+
 </body>
 
 </html>
