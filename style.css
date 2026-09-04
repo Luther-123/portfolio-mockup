@@ -205,15 +205,20 @@ body {
 
 .project-image-wrapper {
     width: 100%;
-    height: 180px;
+    height: 200px;
     overflow: hidden;
-    background: #f1f5f9;
+    background: #0f172a;
+    /* Dark slate to frame the browser screenshots nicely */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    /* Ensures the full screenshot is visible */
     display: block;
 }
 
