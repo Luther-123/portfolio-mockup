@@ -1,27 +1,33 @@
 fetch('projects.json')
   .then(response => response.json())
   .then(data => {
-    // Target specifically the featured list, fallback to empty array
-    const featured = data.featuredProjects || [];
-    const grid = document.getElementById('project-grid');
+    const featuredProjects = data.featuredProjects || [];
+    const container = document.getElementById('featured-projects-grid'); // or your grid container ID
 
-    if (grid) {
-      grid.innerHTML = featured.map(p => `
-        <div class="project-card">
-          <div class="card-thumb">
-            <img src="${p.image}" alt="${p.title}" class="project-img">
+    if (container && featuredProjects.length > 0) {
+      container.innerHTML = featuredProjects.map(p => {
+        const title = p.title || p.project || 'Untitled Project';
+        const tag = p.tag || p.builtWith || '';
+        const description = p.description || '';
+        const image = p.image || p.img || p.thumbnail || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80';
+        const link = p.link || '#';
+
+        return `
+          <div class="project-card">
+            <div class="project-image-wrapper">
+              <img src="${image}" alt="${title}" class="project-img">
+            </div>
+            <div class="project-info">
+              <span class="project-tag">${tag}</span>
+              <h3 class="project-title">${title} &nearr;</h3>
+              <p class="project-desc">${description}</p>
+              <a href="${link}" target="_blank" class="project-link"></a>
+            </div>
           </div>
-          <div class="card-info">
-            <span class="tag">${p.tag}</span>
-            <h3>
-              <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="project-link">
-                ${p.title} <span class="arrow">&nearr;</span>
-              </a>
-            </h3>
-            <p>${p.description}</p>
-          </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
+
+    // Keep your existing archive code below...
   })
-  .catch(error => console.error('Error loading featured projects:', error));
+  .catch(error => console.error('Error loading projects:', error));
