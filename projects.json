@@ -12,5 +12,12 @@
         "description": "Custom software workflows integrating low-poly 3D environment simulations, custom memory-managed data structures, and procedural asset rendering.",
         "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
         "link": "https://github.com/yourusername/3d-pipeline"
+    },
+    {
+        "title": "LMS: Learning Management System",
+        "tag": "React, Next.js, HTML",
+        "description": "This a learning management system that can be used for institutions, to track students performance, display class schedule and operate as a student's database.",
+        "image": "https://imgur.com/a/awnIp7Z",
+        "link": "https://learning-management-system-pied-two.vercel.app/"
     }
 ]
