@@ -151,67 +151,83 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Luther. Built with precision and dark-mode styling.</p>
         </div>
-    </section>
-    <script src="projects.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const container = document.querySelector('.hero-canvas-container');
-        const canvas = document.getElementById('hero-3d-canvas');
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script>
+            const container = document.querySelector('.hero-canvas-container');
+            const canvas = document.getElementById('hero-3d-canvas');
 
-        // Scene, Camera, Renderer
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+            // Scene, Camera, Renderer
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
 
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        // Create a sleek Torus Knot or Octahedron wireframe matching your accent colors
-        const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-        const material = new THREE.MeshBasicMaterial({
-            color: 0xf97316, // Vibrant orange matching your accent
-            wireframe: true,
-            transparent: true,
-            opacity: 0.8
-        });
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-
-        camera.position.z = 30;
-
-        // Mouse movement interaction variables
-        let mouseX = 0;
-        let mouseY = 0;
-        let targetX = 0;
-        let targetY = 0;
-
-        document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX - window.innerWidth / 2) * 0.001;
-            mouseY = (event.clientY - window.innerHeight / 2) * 0.001;
-        });
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-
-            targetX += (mouseX - targetX) * 0.05;
-            targetY += (mouseY - targetY) * 0.05;
-
-            mesh.rotation.x += 0.005 + targetY;
-            mesh.rotation.y += 0.007 + targetX;
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Responsive window resizing
-        window.addEventListener('resize', () => {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
             renderer.setSize(container.clientWidth, container.clientHeight);
-        });
-    </script>
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+            // Structured Icosahedron (Data Node look)
+            const geometry = new THREE.IcosahedronGeometry(12, 1);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0xf97316, // Vibrant orange matching your accent
+                wireframe: true,
+                transparent: true,
+                opacity: 0.6
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            // Background particle nodes
+            const particleGeometry = new THREE.BufferGeometry();
+            const particleCount = 40;
+            const posArray = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 35;
+            }
+
+            particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particleMaterial = new THREE.PointsMaterial({
+                size: 0.6,
+                color: 0x1e293b
+            });
+            const particlesMesh = new THREE.Points(particleGeometry, particleMaterial);
+            scene.add(particlesMesh);
+
+            camera.position.z = 30;
+
+            // Mouse movement interaction variables
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - window.innerWidth / 2) * 0.0008;
+                mouseY = (event.clientY - window.innerHeight / 2) * 0.0008;
+            });
+
+            // Smoother, mechanical animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+
+                targetX += (mouseX - targetX) * 0.03;
+                targetY += (mouseY - targetY) * 0.03;
+
+                mesh.rotation.x = 0.4 + targetY * 2;
+                mesh.rotation.y += 0.003 + targetX * 2;
+
+                particlesMesh.rotation.y -= 0.0008;
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Responsive window resizing
+            window.addEventListener('resize', () => {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+        </script>
 
 </body>
 
