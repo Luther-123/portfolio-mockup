@@ -2,7 +2,7 @@
   "featuredProjects": [
     {
       "title": "LMS: Learning Management System",
-      "tag": "React, Next.js, HTML",
+      "tag": "React, Next.js, HTML, CSS",
       "description": "This a learning management system that can be used for institutions, to track students performance, display class schedule and operate as a student's database.",
       "image": "https://i.imgur.com/3fckMKC.png",
       "link": "https://learning-management-system-pied-two.vercel.app/"
