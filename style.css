@@ -205,7 +205,7 @@ body {
 
 .project-image-wrapper {
     width: 100%;
-    height: auto;
+    height: 180px;
     overflow: hidden;
     background: #0f172a;
     /* Dark slate to frame the browser screenshots nicely */
