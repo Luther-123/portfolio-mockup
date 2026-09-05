@@ -205,13 +205,14 @@ body {
 
 .project-image-wrapper {
     width: 100%;
-    height: 200px;
+    height: auto;
     overflow: hidden;
     background: #0f172a;
     /* Dark slate to frame the browser screenshots nicely */
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .project-img {
@@ -226,7 +227,7 @@ body {
     transform: scale(1.03);
 }
 
-.card-info {
+.project-info {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -253,7 +254,8 @@ body {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
-    margin: 0;
+    margin: 2;
+
 }
 
 .project-link {
@@ -267,6 +269,7 @@ body {
 
 .project-link:hover {
     color: var(--accent-primary);
+    transform: translate(3px, -3px);
 }
 
 .arrow {
@@ -289,15 +292,6 @@ body {
 .archive-link:hover {
     color: var(--accent-primary);
     transform: translate(3px, -3px);
-}
-
-/* Thumbnails */
-.dunning-thumb {
-    background: linear-gradient(135deg, #f1f5f9, #e2e8f0), radial-gradient(circle at 30% 30%, rgba(234, 88, 12, 0.1), transparent 60%);
-}
-
-.graphics-thumb {
-    background: linear-gradient(135deg, #e0f2fe, #f1f5f9), radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1), transparent 60%);
 }
 
 /* Skills Section */
