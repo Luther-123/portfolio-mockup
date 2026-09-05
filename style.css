@@ -285,6 +285,8 @@ body {
 
 .project-link:hover {
     color: var(--accent-primary);
+    transform: translate(3px, -3px);
+
 }
 
 .arrow {
