@@ -458,7 +458,6 @@ body {
 }
 
 .table-link:hover {
-    text-decoration: underline;
     transform: translate(3px, -3px);
 }
 
