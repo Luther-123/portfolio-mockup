@@ -2,21 +2,21 @@
   "featuredProjects": [
     {
       "title": "LMS: Learning Management System",
-      "tag": "React, Next.js, HTML, CSS",
+      "tag": "React/ Next.js/ HTML/ CSS",
       "description": "This a learning management system that can be used for institutions, to track students performance, display class schedule and operate as a student's database.",
       "image": "https://i.imgur.com/3fckMKC.png",
       "link": "https://learning-management-system-pied-two.vercel.app/"
     },
     {
       "title": "E-Commerce WebStore",
-      "tag": "Next.js, React, HTML",
+      "tag": "Next.js/ React/ HTML",
       "description": "Created an webstore for a shop that needed to go live online. The webstore features full stack features, a login, checkout and personal data settings section that allows you to change you data as one deems fit",
       "image": "https://i.imgur.com/LoEGn7R.png",
       "link": "https://my-marketplace2-n24w-ouqxatfzy-luther-123s-projects.vercel.app/"
     },
     {
       "title": "Personal-Finance-Tracker",
-      "tag": "HTML, Python, Js, CSS",
+      "tag": "HTML/ Python/ Js/ CSS",
       "description": "A mockup for a personal finance tracker. it is created to help you manage your finances with a visually simple user interface.",
       "image": "https://i.imgur.com/63H3Et9.png",
       "link": "https://luther-123.github.io/personal-finace-tracker/index.html"
@@ -27,21 +27,21 @@
       "year": "2026",
       "title": "E-commerce Webstore",
       "madeAt": "Independent",
-      "tag": "Next.js, React, HTML",
+      "tag": "Next.js/ React/ HTML",
       "link": "https://my-marketplace2-n24w-ouqxatfzy-luther-123s-projects.vercel.app/"
     },
     {
       "year": "2026",
       "title": "LMS: Learning Management System",
       "madeAt": "Independent",
-      "tag": "React, Next.js, HTML",
+      "tag": "React/ Next.js/ HTML",
       "link": "https://learning-management-system-pied-two.vercel.app/"
     },
     {
       "year": "2026",
       "title": "Personal-Finance-Tracker",
       "madeAt": "Independent",
-      "tag": "HTML, Python, Js, CSS",
+      "tag": "HTML/ Python/ Js/ CSS",
       "link": "https://luther-123.github.io/personal-finace-tracker/index.html"
     },
     {
